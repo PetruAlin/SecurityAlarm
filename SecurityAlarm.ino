@@ -193,11 +193,16 @@ void setup()
     while (1);
   }
   reset();
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Wait 1");
+  lcd.setCursor(0, 1);
+  lcd.print("minute");
   while (millis() - ts < 60000) {
-    //ts = millis();
+    
   }
   ts = millis();
-  Serial.println("Alarm starting");
+  Serial.println("Alarm active");
   // lcd
   lcd.clear();
   lcd.setCursor(0, 0);
@@ -223,6 +228,9 @@ void introducePassword() {
   Serial.print("Password: ");
   int current = 0;
   char introduced[5];
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Password");
   while (current < passLength) {
     uint32_t now = millis();
     // Create a variable named key of type char to hold the characters pressed
@@ -235,6 +243,8 @@ void introducePassword() {
       stop = micros();
       if (ind >= 0 && ind < 16) {// if the key variable contains
         introduced[current] = keys[ind]; // output characters from Serial Monitor
+        lcd.setCursor(current, 1);
+        lcd.print(keys[ind]);
         current++;
         if (current != 4)
           Serial.print(keys[ind]);
@@ -252,27 +262,45 @@ void introducePassword() {
   }
   if (p == 1) {
     Serial.println("Correct password");
-    int lcd_reprint = 0;
-    lcd.clear();
+    lcd.setCursor(0,1);
+    lcd.print("Correct");
+    lcd_reprint = 0;
     mode = 0;
     //ts = millis();
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Wait 1");
+    lcd.setCursor(0, 1);
+    lcd.print("minute");
     while (millis() - ts < 60000) {
 
     }
+    ts = millis();
+    lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("Alarm");
     lcd.setCursor(0, 1);
     lcd.print("active");
   } else {
     Serial.println("Wrong password");
+    lcd.setCursor(0,1);
+    lcd.print("Wrong ");
+    while (millis() - ts < 1000) {
+
+    }
+    ts = millis();
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Motion");
+    lcd.setCursor(0, 1);
+    lcd.print("Detected");
     mode = 1;
   }
 }
 
 void loop()
 {
-  //Serial.println(mode);
-  if (mode == 0) {
+  if (mode == 0) {  // Active mode
     int p = 0;
     //if (millis() - pt > PIR_RESET) {
     //pt = millis();
@@ -285,14 +313,14 @@ void loop()
         lcd.clear();
         lcd.setCursor(0, 0);
         lcd.print("Motion");
-        lcd.setCursor(1, 0);
+        lcd.setCursor(0, 1);
         lcd.print("Detected");
         lcd_reprint = 1;
+        pt = millis();
       }
       App.write("Motion Detected!");
     }
-  } else if (mode == 1) {
-    pt = millis();
+  } else if (mode == 1) { // Motion detected mode
     digitalWrite(BUZZER, HIGH);
     delay(100);
     digitalWrite(BUZZER, LOW);
@@ -301,16 +329,46 @@ void loop()
     if (App.available()) {
       char a = App.read();
       if(a - 48 == 0){
-        mode = 2;
+        mode = 0;
+        lcd_reprint = 0;
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print("Wait 1");
+        lcd.setCursor(0, 1);
+        lcd.print("minute");
+        while (millis() - ts < 60000) {
+    
+        }
+        ts = millis();
+        Serial.println("Alarm active");
+        // lcd
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print("Alarm");
+        lcd.setCursor(0, 1);
+        lcd.print("active");
       }
     }
     //
-  } else if (mode == 2) {
+  } else if (mode == 2) { // Introduce password from console
+    App.write("WAIT");
     introducePassword();
-    pt = millis();
-  } else if (mode == 3) {
+  } else if (mode == 3) { // Reset password
+    App.write("WAIT");
     reset();
     mode = 0;
+    lcd_reprint = 0;
+    while (millis() - ts < 60000) {
+    
+    }
+    ts = millis();
+    Serial.println("Alarm active");
+    // lcd
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Alarm");
+    lcd.setCursor(0, 1);
+    lcd.print("active");
   }
 
 }

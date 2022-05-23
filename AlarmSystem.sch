@@ -1361,6 +1361,32 @@ by exp-lbrs.ulp</description>
 <wire x1="1.27" y1="6.35" x2="-7.62" y2="6.35" width="0.127" layer="1"/>
 <wire x1="-7.62" y1="6.35" x2="-7.62" y2="-5.08" width="0.127" layer="1"/>
 </package>
+<package name="I2C_LCD">
+<smd name="P$1" x="-5.08" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$2" x="-3.81" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$3" x="-2.54" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$4" x="0" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$5" x="-1.27" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$6" x="1.27" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$7" x="2.54" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$8" x="3.81" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$9" x="5.08" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$10" x="6.35" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$11" x="7.62" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$12" x="8.89" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$13" x="10.16" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$14" x="11.43" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$15" x="12.7" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$16" x="13.97" y="0" dx="1.27" dy="0.635" layer="1" rot="R90"/>
+<smd name="P$17" x="-6.35" y="1.27" dx="1.27" dy="0.635" layer="1" rot="R180"/>
+<smd name="P$18" x="-6.35" y="2.54" dx="1.27" dy="0.635" layer="1" rot="R180"/>
+<smd name="P$19" x="-6.35" y="3.81" dx="1.27" dy="0.635" layer="1" rot="R180"/>
+<smd name="P$20" x="-6.35" y="5.08" dx="1.27" dy="0.635" layer="1" rot="R180"/>
+<wire x1="-6.35" y1="0" x2="15.24" y2="0" width="0.127" layer="1"/>
+<wire x1="15.24" y1="0" x2="15.24" y2="6.35" width="0.127" layer="1"/>
+<wire x1="15.24" y1="6.35" x2="-6.35" y2="6.35" width="0.127" layer="1"/>
+<wire x1="-6.35" y1="6.35" x2="-6.35" y2="0" width="0.127" layer="1"/>
+</package>
 </packages>
 <symbols>
 <symbol name="MICRO_SD_CARD_MODULE">
@@ -1417,6 +1443,32 @@ by exp-lbrs.ulp</description>
 <pin name="RXD" x="-7.62" y="-12.7" length="middle" rot="R90"/>
 <pin name="STATE" x="-12.7" y="-12.7" length="middle" rot="R90"/>
 </symbol>
+<symbol name="I2C_LCD">
+<pin name="VSS" x="-35.56" y="-7.62" length="middle" rot="R90"/>
+<pin name="VDD" x="-33.02" y="-7.62" length="middle" rot="R90"/>
+<pin name="RS" x="-27.94" y="-7.62" length="middle" rot="R90"/>
+<pin name="RW" x="-25.4" y="-7.62" length="middle" rot="R90"/>
+<pin name="E" x="-22.86" y="-7.62" length="middle" rot="R90"/>
+<pin name="DB0" x="-20.32" y="-7.62" length="middle" rot="R90"/>
+<pin name="DB1" x="-17.78" y="-7.62" length="middle" rot="R90"/>
+<pin name="DB2" x="-15.24" y="-7.62" length="middle" rot="R90"/>
+<pin name="DB3" x="-12.7" y="-7.62" length="middle" rot="R90"/>
+<pin name="DB4" x="-10.16" y="-7.62" length="middle" rot="R90"/>
+<pin name="DB5" x="-7.62" y="-7.62" length="middle" rot="R90"/>
+<pin name="DB6" x="-5.08" y="-7.62" length="middle" rot="R90"/>
+<pin name="DB7" x="-2.54" y="-7.62" length="middle" rot="R90"/>
+<pin name="VD" x="-30.48" y="-7.62" length="middle" rot="R90"/>
+<pin name="A" x="0" y="-7.62" length="middle" rot="R90"/>
+<pin name="K" x="2.54" y="-7.62" length="middle" rot="R90"/>
+<pin name="GND" x="-45.72" y="2.54" length="middle"/>
+<pin name="VCC" x="-45.72" y="5.08" length="middle"/>
+<pin name="SDA" x="-45.72" y="7.62" length="middle"/>
+<pin name="SCL" x="-45.72" y="10.16" length="middle"/>
+<wire x1="-40.64" y1="-2.54" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-2.54" x2="5.08" y2="15.24" width="0.254" layer="94"/>
+<wire x1="5.08" y1="15.24" x2="-40.64" y2="15.24" width="0.254" layer="94"/>
+<wire x1="-40.64" y1="15.24" x2="-40.64" y2="-2.54" width="0.254" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="SD_CARD_MODULE">
@@ -1459,6 +1511,75 @@ by exp-lbrs.ulp</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="I2C_LCD">
+<gates>
+<gate name="G$1" symbol="I2C_LCD" x="17.78" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="I2C_LCD">
+<connects>
+<connect gate="G$1" pin="A" pad="P$1"/>
+<connect gate="G$1" pin="DB0" pad="P$2"/>
+<connect gate="G$1" pin="DB1" pad="P$3"/>
+<connect gate="G$1" pin="DB2" pad="P$4"/>
+<connect gate="G$1" pin="DB3" pad="P$5"/>
+<connect gate="G$1" pin="DB4" pad="P$6"/>
+<connect gate="G$1" pin="DB5" pad="P$7"/>
+<connect gate="G$1" pin="DB6" pad="P$8"/>
+<connect gate="G$1" pin="DB7" pad="P$9"/>
+<connect gate="G$1" pin="E" pad="P$10"/>
+<connect gate="G$1" pin="GND" pad="P$11"/>
+<connect gate="G$1" pin="K" pad="P$12"/>
+<connect gate="G$1" pin="RS" pad="P$13"/>
+<connect gate="G$1" pin="RW" pad="P$14"/>
+<connect gate="G$1" pin="SCL" pad="P$15"/>
+<connect gate="G$1" pin="SDA" pad="P$16"/>
+<connect gate="G$1" pin="VCC" pad="P$17"/>
+<connect gate="G$1" pin="VD" pad="P$18"/>
+<connect gate="G$1" pin="VDD" pad="P$19"/>
+<connect gate="G$1" pin="VSS" pad="P$20"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="supply2" urn="urn:adsk.eagle:library:372">
+<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
+GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
+Please keep in mind, that these devices are necessary for the
+automatic wiring of the supply signals.&lt;p&gt;
+The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
+In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="GND" urn="urn:adsk.eagle:symbol:26990/1" library_version="2">
+<wire x1="-1.27" y1="0" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="0" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.27" x2="-1.27" y2="0" width="0.254" layer="94"/>
+<text x="-1.905" y="-3.175" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="GND" urn="urn:adsk.eagle:component:27037/1" prefix="SUPPLY" library_version="2">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="GND" symbol="GND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -1472,14 +1593,23 @@ by exp-lbrs.ulp</description>
 </classes>
 <parts>
 <part name="U1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="ARDUINOR3" device="-DIMENSION" package3d_urn="urn:adsk.eagle:package:6240877/1"/>
-<part name="SP1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SPEAKER" device="/AL60P" package3d_urn="urn:adsk.eagle:package:6240661/1"/>
-<part name="X1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="HD44780LCD" device="-1602" package3d_urn="urn:adsk.eagle:package:6240760/1"/>
+<part name="BUZZER" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SPEAKER" device="/AL60P" package3d_urn="urn:adsk.eagle:package:6240661/1"/>
+<part name="LCD_1602" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="HD44780LCD" device="-1602" package3d_urn="urn:adsk.eagle:package:6240760/1"/>
 <part name="IO/EXPANDER" library="i2c" deviceset="PCF8574" device="AP"/>
-<part name="S1" library="ESP32_WROVER" deviceset="SPARKFUN-SWITCHES_MOMENTARY-SWITCH-SPST-2" device="-SMD-4.6X2.8MM"/>
+<part name="BUTTON" library="ESP32_WROVER" deviceset="SPARKFUN-SWITCHES_MOMENTARY-SWITCH-SPST-2" device="-SMD-4.6X2.8MM"/>
 <part name="PIR1" library="senba-pir-sensor" deviceset="D203B" device=""/>
-<part name="U$1" library="keypad_4x4_raw" deviceset="KEYPAD4X4" device=""/>
-<part name="U$2" library="Lab2" deviceset="SD_CARD_MODULE" device=""/>
-<part name="U$3" library="Lab2" deviceset="HC_05_BLUETOOTH_MODULE" device=""/>
+<part name="KEY_PAD" library="keypad_4x4_raw" deviceset="KEYPAD4X4" device=""/>
+<part name="MICRO_SD_MODULE" library="Lab2" deviceset="SD_CARD_MODULE" device=""/>
+<part name="HC-05_BLUETOOTH_MODULE" library="Lab2" deviceset="HC_05_BLUETOOTH_MODULE" device=""/>
+<part name="I2C_LCD" library="Lab2" deviceset="I2C_LCD" device=""/>
+<part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1487,19 +1617,19 @@ by exp-lbrs.ulp</description>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="73.66" y="53.34" smashed="yes"/>
-<instance part="SP1" gate="S1" x="157.48" y="68.58" smashed="yes" rot="R270">
-<attribute name="NAME" x="163.83" y="72.39" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="154.305" y="72.39" size="1.778" layer="96" rot="R270"/>
+<instance part="BUZZER" gate="S1" x="157.48" y="88.9" smashed="yes" rot="R270">
+<attribute name="NAME" x="163.83" y="92.71" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="154.305" y="92.71" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="X1" gate="G$1" x="205.74" y="121.92" smashed="yes">
-<attribute name="NAME" x="182.88" y="109.22" size="2.1844" layer="95" font="vector"/>
-<attribute name="VALUE" x="195.58" y="109.22" size="2.1844" layer="96" font="vector"/>
+<instance part="LCD_1602" gate="G$1" x="167.64" y="20.32" smashed="yes">
+<attribute name="NAME" x="144.78" y="7.62" size="2.1844" layer="95" font="vector"/>
+<attribute name="VALUE" x="170.18" y="7.62" size="2.1844" layer="96" font="vector"/>
 </instance>
 <instance part="IO/EXPANDER" gate="IC$1" x="-27.94" y="101.6" smashed="yes">
 <attribute name="NAME" x="-30.48" y="116.84" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-33.02" y="88.9" size="1.778" layer="96"/>
 </instance>
-<instance part="S1" gate="G$1" x="116.84" y="86.36" smashed="yes">
+<instance part="BUTTON" gate="G$1" x="116.84" y="86.36" smashed="yes">
 <attribute name="NAME" x="116.84" y="91.186" size="1.778" layer="95" font="vector" align="bottom-center"/>
 <attribute name="VALUE" x="116.84" y="83.566" size="1.778" layer="96" font="vector" align="top-center"/>
 </instance>
@@ -1507,15 +1637,40 @@ by exp-lbrs.ulp</description>
 <attribute name="NAME" x="78.74" y="137.16" size="1.27" layer="95"/>
 <attribute name="VALUE" x="78.105" y="128.27" size="1.27" layer="96"/>
 </instance>
-<instance part="U$1" gate="G$1" x="10.16" y="139.7" smashed="yes">
+<instance part="KEY_PAD" gate="G$1" x="10.16" y="139.7" smashed="yes">
 <attribute name="NAME" x="-7.62" y="154.94" size="1.27" layer="95"/>
 <attribute name="VALUE" x="0" y="154.94" size="1.27" layer="96"/>
 </instance>
-<instance part="U$2" gate="G$1" x="55.88" y="154.94" smashed="yes" rot="R270"/>
+<instance part="MICRO_SD_MODULE" gate="G$1" x="55.88" y="154.94" smashed="yes" rot="R270"/>
 <instance part="IO/EXPANDER" gate="PWR" x="-45.72" y="121.92" smashed="yes">
 <attribute name="NAME" x="-46.355" y="121.285" size="1.778" layer="95"/>
 </instance>
-<instance part="U$3" gate="G$1" x="101.6" y="177.8" smashed="yes"/>
+<instance part="HC-05_BLUETOOTH_MODULE" gate="G$1" x="101.6" y="177.8" smashed="yes"/>
+<instance part="I2C_LCD" gate="G$1" x="180.34" y="48.26" smashed="yes"/>
+<instance part="SUPPLY1" gate="GND" x="-45.72" y="106.68" smashed="yes">
+<attribute name="VALUE" x="-47.625" y="103.505" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY2" gate="GND" x="45.72" y="119.38" smashed="yes">
+<attribute name="VALUE" x="43.815" y="116.205" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY4" gate="GND" x="104.14" y="152.4" smashed="yes">
+<attribute name="VALUE" x="102.235" y="149.225" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY5" gate="GND" x="157.48" y="78.74" smashed="yes">
+<attribute name="VALUE" x="155.575" y="75.565" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY6" gate="GND" x="127" y="48.26" smashed="yes">
+<attribute name="VALUE" x="125.095" y="45.085" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY7" gate="GND" x="83.82" y="7.62" smashed="yes">
+<attribute name="VALUE" x="81.915" y="4.445" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY8" gate="GND" x="83.82" y="111.76" smashed="yes">
+<attribute name="VALUE" x="81.915" y="108.585" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY3" gate="GND" x="129.54" y="83.82" smashed="yes">
+<attribute name="VALUE" x="127.635" y="80.645" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -1524,47 +1679,52 @@ by exp-lbrs.ulp</description>
 <segment>
 <pinref part="U1" gate="G$1" pin="D2"/>
 <wire x1="88.9" y1="83.82" x2="88.9" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="S1" gate="G$1" pin="1"/>
+<pinref part="BUTTON" gate="G$1" pin="1"/>
 <wire x1="88.9" y1="88.9" x2="111.76" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="88.9" x2="111.76" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="S1" gate="G$1" pin="3"/>
-<wire x1="121.92" y1="86.36" x2="129.54" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="86.36" x2="129.54" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="38.1" x2="129.54" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="10.16" x2="76.2" y2="10.16" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="GND1"/>
-<wire x1="76.2" y1="10.16" x2="76.2" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="SP1" gate="S1" pin="-"/>
-<wire x1="157.48" y1="63.5" x2="157.48" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="38.1" x2="129.54" y2="38.1" width="0.1524" layer="91"/>
-<junction x="129.54" y="38.1"/>
-<wire x1="139.7" y1="10.16" x2="129.54" y2="10.16" width="0.1524" layer="91"/>
-<junction x="129.54" y="10.16"/>
-<label x="139.7" y="10.16" size="1.778" layer="95" xref="yes"/>
-</segment>
-<segment>
 <pinref part="PIR1" gate="G$1" pin="GND"/>
 <wire x1="83.82" y1="121.92" x2="83.82" y2="114.3" width="0.1524" layer="91"/>
-<label x="83.82" y="114.3" size="1.778" layer="95" rot="R270" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="GND"/>
-<wire x1="45.72" y1="129.54" x2="45.72" y2="124.46" width="0.1524" layer="91"/>
-<label x="45.72" y="124.46" size="1.778" layer="95" rot="R270" xref="yes"/>
+<pinref part="SUPPLY8" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="IO/EXPANDER" gate="PWR" pin="GND"/>
 <wire x1="-45.72" y1="114.3" x2="-45.72" y2="109.22" width="0.1524" layer="91"/>
-<label x="-45.72" y="109.22" size="1.778" layer="95" rot="R270" xref="yes"/>
+<pinref part="SUPPLY1" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="GND"/>
+<pinref part="HC-05_BLUETOOTH_MODULE" gate="G$1" pin="GND"/>
 <wire x1="104.14" y1="165.1" x2="104.14" y2="154.94" width="0.1524" layer="91"/>
-<label x="104.14" y="154.94" size="1.778" layer="95" rot="R270" xref="yes"/>
+<pinref part="SUPPLY4" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="GND1"/>
+<wire x1="83.82" y1="10.16" x2="76.2" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="10.16" x2="76.2" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="SUPPLY7" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="BUTTON" gate="G$1" pin="3"/>
+<wire x1="121.92" y1="86.36" x2="129.54" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="SUPPLY3" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="BUZZER" gate="S1" pin="-"/>
+<wire x1="157.48" y1="83.82" x2="157.48" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="SUPPLY5" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="MICRO_SD_MODULE" gate="G$1" pin="GND"/>
+<wire x1="45.72" y1="129.54" x2="45.72" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="SUPPLY2" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="GND"/>
+<wire x1="134.62" y1="50.8" x2="127" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="SUPPLY6" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -1572,8 +1732,8 @@ by exp-lbrs.ulp</description>
 <pinref part="U1" gate="G$1" pin="D3"/>
 <wire x1="86.36" y1="83.82" x2="86.36" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="96.52" x2="157.48" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="SP1" gate="S1" pin="+"/>
-<wire x1="157.48" y1="96.52" x2="157.48" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="BUZZER" gate="S1" pin="+"/>
+<wire x1="157.48" y1="96.52" x2="157.48" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -1588,7 +1748,7 @@ by exp-lbrs.ulp</description>
 <label x="78.74" y="114.3" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="VCC"/>
+<pinref part="MICRO_SD_MODULE" gate="G$1" pin="VCC"/>
 <wire x1="50.8" y1="129.54" x2="50.8" y2="124.46" width="0.1524" layer="91"/>
 <label x="50.8" y="124.46" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
@@ -1598,9 +1758,14 @@ by exp-lbrs.ulp</description>
 <label x="-45.72" y="132.08" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="VCC"/>
+<pinref part="HC-05_BLUETOOTH_MODULE" gate="G$1" pin="VCC"/>
 <wire x1="109.22" y1="165.1" x2="109.22" y2="154.94" width="0.1524" layer="91"/>
 <label x="109.22" y="154.94" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="VCC"/>
+<wire x1="134.62" y1="53.34" x2="127" y2="53.34" width="0.1524" layer="91"/>
+<label x="127" y="53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -1612,7 +1777,7 @@ by exp-lbrs.ulp</description>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="SCK"/>
+<pinref part="MICRO_SD_MODULE" gate="G$1" pin="SCK"/>
 <wire x1="66.04" y1="129.54" x2="66.04" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="104.14" x2="58.42" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="D13"/>
@@ -1621,7 +1786,7 @@ by exp-lbrs.ulp</description>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="CS"/>
+<pinref part="MICRO_SD_MODULE" gate="G$1" pin="CS"/>
 <wire x1="71.12" y1="129.54" x2="71.12" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="101.6" x2="66.04" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="D10"/>
@@ -1630,7 +1795,7 @@ by exp-lbrs.ulp</description>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="MISO"/>
+<pinref part="MICRO_SD_MODULE" gate="G$1" pin="MISO"/>
 <wire x1="55.88" y1="129.54" x2="55.88" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="114.3" x2="60.96" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="D12"/>
@@ -1639,7 +1804,7 @@ by exp-lbrs.ulp</description>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="MOSI"/>
+<pinref part="MICRO_SD_MODULE" gate="G$1" pin="MOSI"/>
 <wire x1="60.96" y1="129.54" x2="60.96" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="116.84" x2="63.5" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="D11"/>
@@ -1650,7 +1815,7 @@ by exp-lbrs.ulp</description>
 <segment>
 <pinref part="IO/EXPANDER" gate="IC$1" pin="P0"/>
 <wire x1="-17.78" y1="111.76" x2="-5.08" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="C1"/>
+<pinref part="KEY_PAD" gate="G$1" pin="C1"/>
 <wire x1="-5.08" y1="111.76" x2="-5.08" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -1658,13 +1823,13 @@ by exp-lbrs.ulp</description>
 <segment>
 <pinref part="IO/EXPANDER" gate="IC$1" pin="P1"/>
 <wire x1="-17.78" y1="109.22" x2="-2.54" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="C2"/>
+<pinref part="KEY_PAD" gate="G$1" pin="C2"/>
 <wire x1="-2.54" y1="109.22" x2="-2.54" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="C3"/>
+<pinref part="KEY_PAD" gate="G$1" pin="C3"/>
 <wire x1="0" y1="132.08" x2="0" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="IO/EXPANDER" gate="IC$1" pin="P2"/>
 <wire x1="0" y1="106.68" x2="-17.78" y2="106.68" width="0.1524" layer="91"/>
@@ -1672,7 +1837,7 @@ by exp-lbrs.ulp</description>
 </net>
 <net name="N$11" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="C4"/>
+<pinref part="KEY_PAD" gate="G$1" pin="C4"/>
 <wire x1="2.54" y1="132.08" x2="2.54" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="IO/EXPANDER" gate="IC$1" pin="P3"/>
 <wire x1="2.54" y1="104.14" x2="-17.78" y2="104.14" width="0.1524" layer="91"/>
@@ -1680,7 +1845,7 @@ by exp-lbrs.ulp</description>
 </net>
 <net name="N$12" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="R1"/>
+<pinref part="KEY_PAD" gate="G$1" pin="R1"/>
 <wire x1="12.7" y1="149.86" x2="15.24" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="IO/EXPANDER" gate="IC$1" pin="P4"/>
 <wire x1="-17.78" y1="101.6" x2="15.24" y2="101.6" width="0.1524" layer="91"/>
@@ -1689,7 +1854,7 @@ by exp-lbrs.ulp</description>
 </net>
 <net name="N$14" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="R2"/>
+<pinref part="KEY_PAD" gate="G$1" pin="R2"/>
 <wire x1="12.7" y1="147.32" x2="17.78" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="147.32" x2="17.78" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="IO/EXPANDER" gate="IC$1" pin="P5"/>
@@ -1701,13 +1866,13 @@ by exp-lbrs.ulp</description>
 <pinref part="IO/EXPANDER" gate="IC$1" pin="P6"/>
 <wire x1="-17.78" y1="96.52" x2="20.32" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="96.52" x2="20.32" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="R3"/>
+<pinref part="KEY_PAD" gate="G$1" pin="R3"/>
 <wire x1="20.32" y1="144.78" x2="12.7" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$16" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="R4"/>
+<pinref part="KEY_PAD" gate="G$1" pin="R4"/>
 <wire x1="12.7" y1="142.24" x2="22.86" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="142.24" x2="22.86" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="IO/EXPANDER" gate="IC$1" pin="P7"/>
@@ -1735,7 +1900,7 @@ by exp-lbrs.ulp</description>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="U$3" gate="G$1" pin="RXD"/>
+<pinref part="HC-05_BLUETOOTH_MODULE" gate="G$1" pin="RXD"/>
 <wire x1="93.98" y1="165.1" x2="93.98" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="101.6" x2="76.2" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="D7"/>
@@ -1746,9 +1911,141 @@ by exp-lbrs.ulp</description>
 <segment>
 <pinref part="U1" gate="G$1" pin="D6"/>
 <wire x1="78.74" y1="83.82" x2="78.74" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="TXD"/>
+<pinref part="HC-05_BLUETOOTH_MODULE" gate="G$1" pin="TXD"/>
 <wire x1="99.06" y1="165.1" x2="99.06" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="99.06" x2="78.74" y2="99.06" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="VDD" class="0">
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="VDD"/>
+<pinref part="LCD_1602" gate="G$1" pin="VDD"/>
+<wire x1="147.32" y1="40.64" x2="147.32" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$21" class="0">
+<segment>
+<pinref part="LCD_1602" gate="G$1" pin="K"/>
+<pinref part="I2C_LCD" gate="G$1" pin="K"/>
+<wire x1="182.88" y1="38.1" x2="182.88" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$22" class="0">
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="A"/>
+<pinref part="LCD_1602" gate="G$1" pin="A"/>
+<wire x1="180.34" y1="40.64" x2="180.34" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$23" class="0">
+<segment>
+<pinref part="LCD_1602" gate="G$1" pin="DB7"/>
+<pinref part="I2C_LCD" gate="G$1" pin="DB7"/>
+<wire x1="177.8" y1="38.1" x2="177.8" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$24" class="0">
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="DB6"/>
+<pinref part="LCD_1602" gate="G$1" pin="DB6"/>
+<wire x1="175.26" y1="40.64" x2="175.26" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$25" class="0">
+<segment>
+<pinref part="LCD_1602" gate="G$1" pin="DB5"/>
+<pinref part="I2C_LCD" gate="G$1" pin="DB5"/>
+<wire x1="172.72" y1="38.1" x2="172.72" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$26" class="0">
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="DB4"/>
+<pinref part="LCD_1602" gate="G$1" pin="DB4"/>
+<wire x1="170.18" y1="40.64" x2="170.18" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$27" class="0">
+<segment>
+<pinref part="LCD_1602" gate="G$1" pin="DB3"/>
+<pinref part="I2C_LCD" gate="G$1" pin="DB3"/>
+<wire x1="167.64" y1="38.1" x2="167.64" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$28" class="0">
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="DB2"/>
+<pinref part="LCD_1602" gate="G$1" pin="DB2"/>
+<wire x1="165.1" y1="40.64" x2="165.1" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$29" class="0">
+<segment>
+<pinref part="LCD_1602" gate="G$1" pin="DB1"/>
+<pinref part="I2C_LCD" gate="G$1" pin="DB1"/>
+<wire x1="162.56" y1="38.1" x2="162.56" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$30" class="0">
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="DB0"/>
+<pinref part="LCD_1602" gate="G$1" pin="DB0"/>
+<wire x1="160.02" y1="40.64" x2="160.02" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$31" class="0">
+<segment>
+<pinref part="LCD_1602" gate="G$1" pin="E"/>
+<pinref part="I2C_LCD" gate="G$1" pin="E"/>
+<wire x1="157.48" y1="38.1" x2="157.48" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$32" class="0">
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="RW"/>
+<pinref part="LCD_1602" gate="G$1" pin="RW"/>
+<wire x1="154.94" y1="40.64" x2="154.94" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$33" class="0">
+<segment>
+<pinref part="LCD_1602" gate="G$1" pin="RS"/>
+<pinref part="I2C_LCD" gate="G$1" pin="RS"/>
+<wire x1="152.4" y1="38.1" x2="152.4" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$34" class="0">
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="VD"/>
+<pinref part="LCD_1602" gate="G$1" pin="VO"/>
+<wire x1="149.86" y1="40.64" x2="149.86" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="VSS" class="0">
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="VSS"/>
+<pinref part="LCD_1602" gate="G$1" pin="VSS"/>
+<wire x1="144.78" y1="40.64" x2="144.78" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$39" class="0">
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="SCL"/>
+<wire x1="134.62" y1="58.42" x2="109.22" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="58.42" x2="109.22" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="17.78" x2="96.52" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="A5/SCL"/>
+<wire x1="96.52" y1="17.78" x2="96.52" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$40" class="0">
+<segment>
+<pinref part="I2C_LCD" gate="G$1" pin="SDA"/>
+<pinref part="U1" gate="G$1" pin="A4/SDA"/>
+<wire x1="93.98" y1="22.86" x2="93.98" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="15.24" x2="116.84" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="15.24" x2="116.84" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="55.88" x2="116.84" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
