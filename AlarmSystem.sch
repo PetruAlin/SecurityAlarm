@@ -1614,6 +1614,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <sheets>
 <sheet>
 <plain>
+<text x="162.56" y="58.42" size="1.778" layer="91">I2C for LCD module</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="73.66" y="53.34" smashed="yes"/>

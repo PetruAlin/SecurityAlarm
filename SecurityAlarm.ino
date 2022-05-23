@@ -10,32 +10,63 @@
 // Bluetooth
 #include <SoftwareSerial.h>
 
-#define FILE_WRITE (O_WRITE | O_READ | O_CREAT) // Pentru scriere de la inceput
-#define PIR 5 // 5
-#define BUTTON PD2 // 2 
-#define BUZZER PD3 // 4 -> 3
-
+#define FILE_WRITE (O_WRITE | O_READ | O_CREAT) // Scriere la inceput de fisier
+#define PIR PD5
+#define BUTTON PD2
+#define BUZZER PD3
+#define chipSelect 10
 #define I2CPadModule 0x20
-#define PIR_RESET 3000
+#define I2CLcdModule 0x27
 
+// Alarm system mode
 int mode = 0;
-SoftwareSerial App(6, 7); // RX | TX
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Password
+int passLength = 4;
+char password[5];
+
+// Bluetooth device
+SoftwareSerial App(PD6, PD7);
+
+// Lcd device
+LiquidCrystal_I2C lcd(I2CLcdModule, 16, 2);
+int lcd_reprint = 0;
+
+// Keypad module
 I2CKeyPad keypad(I2CPadModule);
 char keys[] = "123A456B789C*0#DNF";
 uint32_t start, stop;
 uint32_t lastKeyPressed = 0;
 
-int lcd_reprint = 0;
-
-const int chipSelect = 10;
+// Micro sd card variabiles;
+//const int chipSelect = 10;
 File myFile;
-char password[5];
-int passLength = 4;
+
+long ts = 0;
+
+void calibratePir(){
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Wait 1");
+  lcd.setCursor(0, 1);
+  lcd.print("minute");
+  while (millis() - ts < 60000) {
+    
+  }
+  ts = millis();
+  Serial.println("Alarm active");
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Alarm");
+  lcd.setCursor(0, 1);
+  lcd.print("active");
+}
 
 void setPassword() {
   Serial.print("Please set a 4 digit password: ");
   lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Enter 4 digits:");
   int current = 0;
   while (current < passLength) {
     uint32_t now = millis();
@@ -50,7 +81,7 @@ void setPassword() {
       stop = micros();
       if (ind >= 0 && ind < 16) {// if the key variable contains
         password[current] = keys[ind]; // output characters from Serial Monitor
-        lcd.setCursor(current, 0);
+        lcd.setCursor(current, 1);
         lcd.print(keys[ind]);
         current++;
         if (current != 4) {
@@ -64,8 +95,8 @@ void setPassword() {
   password[passLength] = '\0';
   Serial.print("Password set: ");
   Serial.println(password);
-  lcd.setCursor(0, 1);
-  lcd.print("Set");
+  lcd.setCursor(0, 0);
+  lcd.print("Set:");
 }
 
 void getPassword() {
@@ -75,7 +106,7 @@ void getPassword() {
   // LCD
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("Reading");
+  lcd.print("Reading from");
   lcd.setCursor(0, 1);
   lcd.print("SD card");
   //
@@ -122,6 +153,12 @@ void setInterupts() {
   sei();
 }
 
+
+void initLCD() {
+  lcd.init();  //initialize the lcd
+  lcd.backlight();  //open the backlight
+}
+
 void writeToCard() {
   Serial.println("Saving new password...");
   myFile = SD.open("ALARMT~1.TXT", FILE_WRITE);
@@ -137,10 +174,9 @@ void reset() {
   Serial.println("Yes(A), No(D)");
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("Reset?");
+  lcd.print("Reset password?");
   lcd.setCursor(0, 1);
-  lcd.print("A or D");
-  //int p = 0;
+  lcd.print("A(Y) or D(N)");
   int current = 0;
   while (current == 0) {
     // Create a variable named key of type char to hold the characters pressed
@@ -156,26 +192,16 @@ void reset() {
       if (ind >= 0 && ind < 16) {
         Serial.println(keys[ind]);
         if (keys[ind] == 'A') {
-          //p = 1;
           setPassword();
           writeToCard();
           current = 1;
         } else if (keys[ind] == 'D') {
-          //p = 0;
           current = 1;
         }
       }
     }
   }
 }
-
-void initLCD() {
-  lcd.init();  //initialize the lcd
-  lcd.backlight();  //open the backlight
-}
-
-long ts = 0;
-long pt = 0;
 
 void setup()
 {
@@ -193,23 +219,10 @@ void setup()
     while (1);
   }
   reset();
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Wait 1");
-  lcd.setCursor(0, 1);
-  lcd.print("minute");
-  while (millis() - ts < 60000) {
-    
-  }
   ts = millis();
-  Serial.println("Alarm active");
-  // lcd
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Alarm");
-  lcd.setCursor(0, 1);
-  lcd.print("active");
+  calibratePir();
   mode = 0;
+  lcd_reprint = 0;
 }
 
 ISR(INT0_vect)
@@ -230,7 +243,7 @@ void introducePassword() {
   char introduced[5];
   lcd.clear();
   lcd.setCursor(0,0);
-  lcd.print("Password");
+  lcd.print("Enter password:");
   while (current < passLength) {
     uint32_t now = millis();
     // Create a variable named key of type char to hold the characters pressed
@@ -267,20 +280,7 @@ void introducePassword() {
     lcd_reprint = 0;
     mode = 0;
     //ts = millis();
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("Wait 1");
-    lcd.setCursor(0, 1);
-    lcd.print("minute");
-    while (millis() - ts < 60000) {
-
-    }
-    ts = millis();
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("Alarm");
-    lcd.setCursor(0, 1);
-    lcd.print("active");
+    calibratePir();
   } else {
     Serial.println("Wrong password");
     lcd.setCursor(0,1);
@@ -302,10 +302,7 @@ void loop()
 {
   if (mode == 0) {  // Active mode
     int p = 0;
-    //if (millis() - pt > PIR_RESET) {
-    //pt = millis();
     p = digitalRead(PIR);
-    //}
     if (p == HIGH) {
       mode = 1;
       Serial.println("Motion detected!");
@@ -316,7 +313,6 @@ void loop()
         lcd.setCursor(0, 1);
         lcd.print("Detected");
         lcd_reprint = 1;
-        pt = millis();
       }
       App.write("Motion Detected!");
     }
@@ -331,22 +327,7 @@ void loop()
       if(a - 48 == 0){
         mode = 0;
         lcd_reprint = 0;
-        lcd.clear();
-        lcd.setCursor(0, 0);
-        lcd.print("Wait 1");
-        lcd.setCursor(0, 1);
-        lcd.print("minute");
-        while (millis() - ts < 60000) {
-    
-        }
-        ts = millis();
-        Serial.println("Alarm active");
-        // lcd
-        lcd.clear();
-        lcd.setCursor(0, 0);
-        lcd.print("Alarm");
-        lcd.setCursor(0, 1);
-        lcd.print("active");
+        calibratePir();
       }
     }
     //
@@ -358,17 +339,11 @@ void loop()
     reset();
     mode = 0;
     lcd_reprint = 0;
-    while (millis() - ts < 60000) {
-    
-    }
-    ts = millis();
     Serial.println("Alarm active");
-    // lcd
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("Alarm");
     lcd.setCursor(0, 1);
     lcd.print("active");
   }
-
 }
