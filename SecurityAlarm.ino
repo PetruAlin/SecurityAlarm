@@ -285,6 +285,7 @@ void introducePassword() {
     Serial.println("Wrong password");
     lcd.setCursor(0,1);
     lcd.print("Wrong ");
+    App.write("Motion Detected!");
     while (millis() - ts < 1000) {
 
     }
