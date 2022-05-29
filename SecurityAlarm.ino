@@ -36,7 +36,7 @@ int lcd_reprint = 0;
 I2CKeyPad keypad(I2CPadModule);
 char keys[] = "123A456B789C*0#DNF";
 uint32_t start, stop;
-uint32_t lastKeyPressed = 0;
+uint32_t lastPressed = 0;
 
 // Micro sd card variabiles;
 //const int chipSelect = 10;
@@ -74,9 +74,9 @@ void setPassword() {
     uint32_t now = millis();
 
     // Debouncing
-    if (now - lastKeyPressed >= 200)
+    if (now - lastPressed >= 200)
     {
-      lastKeyPressed = now;
+      lastPressed = now;
 
       start = micros();
       uint8_t ind;
@@ -192,9 +192,9 @@ void reset() {
   int current = 0;
   while (current == 0) {
     uint32_t now = millis();
-    if (now - lastKeyPressed >= 200)
+    if (now - lastPressed >= 200)
     {
-      lastKeyPressed = now;
+      lastPressed = now;
 
       start = micros();
       uint8_t ind;
@@ -260,8 +260,8 @@ void introducePassword() {
   while (current < passLength) {
     uint32_t now = millis();
     // Debouncing
-    if (now - lastKeyPressed >= 200) {
-      lastKeyPressed = now;
+    if (now - lastPressed >= 200) {
+      lastPressed = now;
 
       start = micros();
       uint8_t ind;
@@ -334,9 +334,9 @@ void loop()
       App.write("Motion Detected!");
     }
   } else if (mode == 1) { // Motion detected mode
-    digitalWrite(BUZZER, HIGH);
+    tone(BUZZER, 100);
     delay(100);
-    digitalWrite(BUZZER, LOW);
+    noTone(BUZZER);
     delay(100);
     // Search for bluetooth incoming data;
     if (App.available()) {
